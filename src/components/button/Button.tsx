@@ -1,11 +1,21 @@
 import classNames from "classnames";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  noBackground: boolean;
+}
 
-const Button = ({ className, children, ...props }: ButtonProps) => {
+const Button = ({
+  className,
+  children,
+  noBackground,
+  ...props
+}: ButtonProps) => {
   const cls = classNames(
-    "text-white bg-indigo-700 rounded py-1 px-3 font-semibold",
-    className
+    "text-white rounded py-1 px-3 font-semibold",
+    className,
+    {
+      "bg-indigo-700": !noBackground,
+    }
   );
 
   return (
