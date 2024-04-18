@@ -1,9 +1,24 @@
-import Button from "./components/button/Button";
+import Board from "./components/board/Board";
+import {
+  sampleCategory,
+  sampleCategory2,
+  sampleCategory3,
+  sampleCategory4,
+  sampleCategory5,
+} from "./questions/sample";
 
 function App() {
   return (
     <>
-      <Button>Sample text</Button>
+      <Board
+        data={[
+          sampleCategory,
+          sampleCategory2,
+          sampleCategory3,
+          sampleCategory4,
+          sampleCategory5,
+        ]}
+      />
     </>
   );
 }
