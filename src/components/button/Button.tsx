@@ -13,10 +13,10 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const cls = classNames(
-    "text-white rounded-lg py-1 px-3 font-semibold",
+    "rounded-lg py-1 px-3 font-semibold transition-colors cursor-pointer disabled:cursor-not-allowed",
     className,
     {
-      "bg-indigo-700 hover:bg-indigo-800": !noBackground && !outline,
+      "bg-indigo-700 hover:bg-indigo-800 text-white": !noBackground && !outline,
       "border-4": outline,
     }
   );

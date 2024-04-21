@@ -1,8 +1,10 @@
 import { GradientVariant } from "../../hooks/useTailwindGradient";
 
+export type Answers = [string, string, string, string];
+
 export type Question = {
   question: string;
-  answers: [string, string, string, string];
+  answers: Answers;
   correctAnswer: string;
   points?: number;
 };
