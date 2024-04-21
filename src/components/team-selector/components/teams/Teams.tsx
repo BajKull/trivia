@@ -21,7 +21,7 @@ const Teams = () => {
   return (
     <div className="flex flex-col h-full bg-slate-100 py-5 rounded-md w-full">
       <Heading level="h3">Teams</Heading>
-      <div className="flex space-x-5 mx-5 py-5 h-full overflow-x-auto custom-scroll max-w-full">
+      <div className="flex space-x-5 mx-5 py-5 h-full overflow-x-auto custom-scroll-x max-w-full overflow-y-hidden">
         {teams.map((team) => (
           <Team key={team.id} team={team} />
         ))}
