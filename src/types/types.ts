@@ -7,4 +7,7 @@ export type Player = {
   id: string;
   name: string;
   team?: string;
+  answers: number;
+  score: number;
+  correctAnswers: number;
 };

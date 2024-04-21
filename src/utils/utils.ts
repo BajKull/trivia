@@ -7,6 +7,9 @@ export const createTeam = (name: string): Team => ({
 });
 
 export const createPlayer = (name: string): Player => ({
+  answers: 0,
+  correctAnswers: 0,
   id: nanoid(),
   name,
+  score: 0,
 });
