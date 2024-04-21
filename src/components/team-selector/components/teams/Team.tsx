@@ -23,22 +23,27 @@ const Team = ({ team }: TeamProps) => {
       className="w-full max-w-[50%] min-w-80 h-full bg-slate-200 rounded transition-colors"
       isOverClassName="bg-slate-300"
     >
-      <div key={team.id} className="px-5 pt-10 w-full h-full relative">
+      <div
+        key={team.id}
+        className="px-5 pt-10 pb-5 w-full h-full flex flex-col"
+      >
+        <Heading level="h4" className="line-clamp-2 h-14">
+          {team.name}
+        </Heading>
+        <div className="space-y-2 mt-5">
+          {players.map((player) => (
+            <Player key={player.id} player={player} />
+          ))}
+        </div>
         <Button
           noBackground
-          className="absolute top-5 right-5"
+          className="mt-auto hover:text-slate-900 text-slate-800 w-full bg-slate-100 py-2 hover:bg-slate-50"
           onClick={() => deleteTeam(team.id)}
           aria-label="delete team"
           title="Delete team"
         >
           <FontAwesomeIcon icon={faTrash} />
         </Button>
-        <Heading level="h4">{team.name}</Heading>
-        <div className="space-y-2 mt-5">
-          {players.map((player) => (
-            <Player key={player.id} player={player} />
-          ))}
-        </div>
       </div>
     </Droppable>
   );

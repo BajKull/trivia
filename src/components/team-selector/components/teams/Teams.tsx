@@ -18,6 +18,10 @@ const Teams = () => {
     setName("");
   };
 
+  const shufflePlayers = () => {
+    if (!teams.length) return;
+  };
+
   return (
     <div className="flex flex-col h-full bg-slate-100 py-5 rounded-md w-full">
       <Heading level="h3">Teams</Heading>
@@ -39,7 +43,7 @@ const Teams = () => {
           <p className="text-nowrap mr-3">Add team</p>
           <FontAwesomeIcon icon={faPlus} />
         </Button>
-        <Button>
+        <Button onClick={shufflePlayers} disabled={!teams.length}>
           <FontAwesomeIcon icon={faShuffle} />
         </Button>
       </div>

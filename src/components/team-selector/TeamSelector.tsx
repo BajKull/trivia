@@ -22,7 +22,6 @@ const TeamSelector = () => {
       {draggedPlayer && (
         <DragOverlay>
           <Player player={draggedPlayer} notDraggable />
-          <p>xd</p>
         </DragOverlay>
       )}
     </TeamSelectorDndProvider>
