@@ -1,3 +1,4 @@
+import TeamSelector from "components/team-selector/TeamSelector";
 import Board from "./components/board/Board";
 import {
   sampleCategory,
@@ -10,6 +11,7 @@ import {
 function App() {
   return (
     <>
+      <TeamSelector />
       <Board
         data={[
           sampleCategory,
