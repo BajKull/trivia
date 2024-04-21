@@ -23,4 +23,19 @@
       }
     }
   }
+
+  .custom-scroll-x {
+    &::-webkit-scrollbar-track {
+      @apply mx-5;
+    }
+    &::-webkit-scrollbar {
+      @apply h-[6px];
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-slate-500;
+      &:hover {
+        @apply bg-slate-600;
+      }
+    }
+  }
 }
