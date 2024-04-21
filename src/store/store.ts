@@ -7,6 +7,8 @@ const DEFAULT_PLAYERS: Player[] = [];
 
 interface TeamsSlice {
   teams: Team[];
+  turn?: string;
+  setNextTurn: () => void;
   addTeam: (name: string) => void;
   deleteTeam: (id: string) => void;
   resetTeams: () => void;
@@ -16,6 +18,14 @@ const createTeamSlice: StateCreator<TeamsSlice, [], [], TeamsSlice> = (
   set
 ) => ({
   teams: DEFAULT_TEAMS,
+  turn: undefined,
+  setNextTurn: () =>
+    set(({ turn, teams }) => {
+      const currentTeamIndex = teams.findIndex(({ id }) => id === turn);
+      const nextIndex = (currentTeamIndex + 1) % teams.length;
+
+      return { turn: teams[nextIndex].id };
+    }),
   addTeam: (name) =>
     set(({ teams }) => ({ teams: [...teams, createTeam(name)] })),
   deleteTeam: (id) =>
@@ -51,7 +61,7 @@ const createPlayersSlice: StateCreator<PlayersSlice, [], [], PlayersSlice> = (
     })),
 });
 
-export const useStore = create<TeamsSlice & PlayersSlice>()((...a) => ({
+export const useAppStore = create<TeamsSlice & PlayersSlice>()((...a) => ({
   ...createTeamSlice(...a),
   ...createPlayersSlice(...a),
 }));
