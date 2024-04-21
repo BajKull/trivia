@@ -52,16 +52,30 @@ const createPlayersSlice: StateCreator<PlayersSlice, [], [], PlayersSlice> = (
     set(({ players }) => ({
       players: players.filter(({ id: playerId }) => playerId !== id),
     })),
-  assignPlayerToTeam: (playerId, teamId) =>
-    set(({ players }) => ({
+  assignPlayerToTeam: (playerId, teamId) => {
+    return set(({ players }) => ({
       players: players.map((player) => {
         if (playerId !== player.id) return player;
         return { ...player, team: teamId };
       }),
-    })),
+    }));
+  },
 });
 
-export const useAppStore = create<TeamsSlice & PlayersSlice>()((...a) => ({
-  ...createTeamSlice(...a),
-  ...createPlayersSlice(...a),
-}));
+interface DndSlice {
+  dragged?: Player;
+  setDragged: (player?: Player) => void;
+}
+
+const createDndSlice: StateCreator<DndSlice, [], [], DndSlice> = (set) => ({
+  dragged: undefined,
+  setDragged: (player) => set(() => ({ dragged: player })),
+});
+
+export const useAppStore = create<TeamsSlice & PlayersSlice & DndSlice>()(
+  (...a) => ({
+    ...createTeamSlice(...a),
+    ...createPlayersSlice(...a),
+    ...createDndSlice(...a),
+  })
+);
