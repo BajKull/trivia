@@ -34,8 +34,8 @@ export const sampleCategory: Category = {
 };
 
 export const sampleCategory2: Category = {
-  id: "sampleCategory",
-  name: "Sample category",
+  id: "sampleCategory2",
+  name: "Sample category2",
   gradient: "indigo",
   questions: [
     {
@@ -67,8 +67,8 @@ export const sampleCategory2: Category = {
 };
 
 export const sampleCategory3: Category = {
-  id: "sampleCategory",
-  name: "Sample category",
+  id: "sampleCategory3",
+  name: "Sample category3",
   gradient: "lime",
   questions: [
     {
@@ -100,8 +100,8 @@ export const sampleCategory3: Category = {
 };
 
 export const sampleCategory4: Category = {
-  id: "sampleCategory",
-  name: "Sample category",
+  id: "sampleCategory4",
+  name: "Sample category4",
   gradient: "pink",
   questions: [
     {
@@ -133,8 +133,8 @@ export const sampleCategory4: Category = {
 };
 
 export const sampleCategory5: Category = {
-  id: "sampleCategory",
-  name: "Sample category",
+  id: "sampleCategory5",
+  name: "Sample category5",
   gradient: "purple",
   questions: [
     {

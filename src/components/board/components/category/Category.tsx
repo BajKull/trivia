@@ -31,6 +31,7 @@ const Category = ({ data, ...props }: CategoryProps) => {
         {questions.map((question, index) => (
           <Question
             data={question}
+            key={question.question}
             fallbackPoints={100 * (index + 1)}
             color={colors[INDEX_TO_GRADIENT[index]]}
           />
