@@ -10,6 +10,8 @@ import Team from "./Team";
 const Teams = () => {
   const [name, setName] = useState("");
   const teams = useAppStore((state) => state.teams);
+  const players = useAppStore((state) => state.players);
+  const assignPlayerToTeam = useAppStore((state) => state.assignPlayerToTeam);
   const addTeam = useAppStore((state) => state.addTeam);
 
   const handleAddTeam = () => {
@@ -20,6 +22,16 @@ const Teams = () => {
 
   const shufflePlayers = () => {
     if (!teams.length) return;
+
+    const shuffledPlayers = [...players].sort(() => Math.random() - 0.5);
+    const startingIndex = Math.floor(Math.random() * teams.length);
+
+    shuffledPlayers.forEach((player, i) =>
+      assignPlayerToTeam(
+        player.id,
+        teams[(startingIndex + i) % teams.length].id
+      )
+    );
   };
 
   return (
@@ -43,7 +55,10 @@ const Teams = () => {
           <p className="text-nowrap mr-3">Add team</p>
           <FontAwesomeIcon icon={faPlus} />
         </Button>
-        <Button onClick={shufflePlayers} disabled={!teams.length}>
+        <Button
+          onClick={shufflePlayers}
+          disabled={!teams.length || !players.length}
+        >
           <FontAwesomeIcon icon={faShuffle} />
         </Button>
       </div>

@@ -13,9 +13,15 @@ interface TeamProps {
 
 const Team = ({ team }: TeamProps) => {
   const deleteTeam = useAppStore((state) => state.deleteTeam);
+  const assignPlayerToTeam = useAppStore((state) => state.assignPlayerToTeam);
   const players = useAppStore((state) => state.players).filter(
     (player) => player.team === team.id
   );
+
+  const handleDeleteTeam = (id: string) => {
+    players.forEach((player) => assignPlayerToTeam(player.id, undefined));
+    deleteTeam(id);
+  };
 
   return (
     <Droppable
@@ -38,7 +44,7 @@ const Team = ({ team }: TeamProps) => {
         <Button
           noBackground
           className="mt-auto hover:text-slate-900 text-slate-800 w-full bg-slate-100 py-2 hover:bg-slate-50"
-          onClick={() => deleteTeam(team.id)}
+          onClick={() => handleDeleteTeam(team.id)}
           aria-label="delete team"
           title="Delete team"
         >

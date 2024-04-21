@@ -39,7 +39,7 @@ interface PlayersSlice {
   players: Player[];
   addPlayer: (id: string) => void;
   deletePlayer: (id: string) => void;
-  assignPlayerToTeam: (playerId: string, teamId: string) => void;
+  assignPlayerToTeam: (playerId: string, teamId?: string) => void;
 }
 
 const createPlayersSlice: StateCreator<PlayersSlice, [], [], PlayersSlice> = (
