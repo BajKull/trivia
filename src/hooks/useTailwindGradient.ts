@@ -1,4 +1,4 @@
-export type GradientVariant = "indigo" | "blue" | "lime" | "purple" | "pink";
+export type GradientVariant = "indigo" | "green" | "red" | "orange" | "purple";
 
 interface useTailwindGradientProps {
   variant: GradientVariant;
@@ -9,45 +9,45 @@ interface useTailwindGradientProps {
 const useTailwindGradient = ({ variant }: useTailwindGradientProps) => {
   const getVariant = () => {
     switch (variant) {
-      case "blue":
-        return {
-          900: "from-cyan-900 to-blue-700 shadow-blue-600/50",
-          800: "from-cyan-800 to-blue-600 shadow-blue-500/50",
-          700: "from-cyan-700 to-blue-600 shadow-blue-500/50",
-          600: "from-cyan-600 to-blue-500 shadow-blue-400/50",
-          500: "from-cyan-500 to-blue-500 shadow-blue-400/50",
-        };
       case "indigo":
         return {
-          900: "from-indigo-900 to-rose-700 shadow-rose-600/50",
-          800: "from-indigo-800 to-rose-600 shadow-rose-500/50",
-          700: "from-indigo-700 to-rose-600 shadow-rose-500/50",
-          600: "from-indigo-600 to-rose-500 shadow-rose-400/50",
-          500: "from-indigo-500 to-rose-500 shadow-rose-400/50",
+          900: "from-pink-900 via-purple-800 to-indigo-700 shadow-indigo-600/50",
+          800: "from-pink-800 via-purple-700 to-indigo-600 shadow-indigo-500/50",
+          700: "from-pink-700 via-purple-700 to-indigo-600 shadow-indigo-500/50",
+          600: "from-pink-600 via-purple-600 to-indigo-500 shadow-indigo-400/50",
+          500: "from-pink-500 via-purple-600 to-indigo-500 shadow-indigo-400/50",
         };
-      case "lime":
+      case "green":
         return {
-          900: "from-lime-900 to-teal-700 shadow-teal-600/50",
-          800: "from-lime-800 to-teal-600 shadow-teal-500/50",
-          700: "from-lime-700 to-teal-600 shadow-teal-500/50",
-          600: "from-lime-600 to-teal-500 shadow-teal-400/50",
-          500: "from-lime-500 to-teal-500 shadow-teal-400/50",
+          900: "from-purple-900 via-sky-700 to-green-700 shadow-green-600/50",
+          800: "from-purple-800 via-sky-600 to-green-600 shadow-green-500/50",
+          700: "from-purple-700 via-sky-600 to-green-600 shadow-green-500/50",
+          600: "from-purple-600 via-sky-500 to-green-500 shadow-green-400/50",
+          500: "from-purple-500 via-sky-400 to-green-500 shadow-green-400/50",
         };
-      case "pink":
+      case "red":
         return {
-          900: "from-pink-900 to-orange-700 shadow-orange-600/50",
-          800: "from-pink-800 to-orange-600 shadow-orange-500/50",
-          700: "from-pink-700 to-orange-600 shadow-orange-500/50",
-          600: "from-pink-600 to-orange-500 shadow-orange-400/50",
-          500: "from-pink-500 to-orange-500 shadow-orange-400/50",
+          900: "from-yellow-700 via-amber-600 to-red-600 shadow-red-600/50",
+          800: "from-yellow-700 via-amber-500 to-red-500 shadow-red-500/50",
+          700: "from-yellow-600 via-amber-500 to-red-500 shadow-red-500/50",
+          600: "from-yellow-600 via-amber-400 to-red-400 shadow-red-400/50",
+          500: "from-yellow-500 via-amber-400 to-red-400 shadow-red-400/50",
+        };
+      case "orange":
+        return {
+          900: "from-pink-900 via-rose-700 to-orange-700 shadow-orange-600/50",
+          800: "from-pink-800 via-rose-600 to-orange-600 shadow-orange-500/50",
+          700: "from-pink-700 via-rose-500 to-orange-600 shadow-orange-500/50",
+          600: "from-pink-600 via-rose-500 to-orange-500 shadow-orange-400/50",
+          500: "from-pink-500 via-rose-400 to-orange-500 shadow-orange-400/50",
         };
       case "purple":
         return {
-          900: "from-fuchsia-900 to-purple-800 shadow-purple-600/50",
-          800: "from-fuchsia-800 to-purple-700 shadow-purple-500/50",
-          700: "from-fuchsia-700 to-purple-600 shadow-purple-500/50",
-          600: "from-fuchsia-600 to-purple-500 shadow-purple-400/50",
-          500: "from-fuchsia-500 to-purple-400 shadow-purple-400/50",
+          900: "from-cyan-900 via-indigo-700 to-purple-800 shadow-purple-600/50",
+          800: "from-cyan-800 via-indigo-600 to-purple-700 shadow-purple-500/50",
+          700: "from-cyan-700 via-indigo-500 to-purple-600 shadow-purple-500/50",
+          600: "from-cyan-600 via-indigo-400 to-purple-500 shadow-purple-400/50",
+          500: "from-cyan-500 via-indigo-400 to-purple-400 shadow-purple-400/50",
         };
       default:
         return {
