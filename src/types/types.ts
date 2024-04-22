@@ -11,3 +11,5 @@ export type Player = {
   score: number;
   correctAnswers: number;
 };
+
+export type GameState = "teamBuilder" | "game" | "results";
