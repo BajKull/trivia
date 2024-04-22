@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useAppStore } from "store/store";
 import Team from "./Team";
 
-const Teams = () => {
+const TeamList = () => {
   const [name, setName] = useState("");
   const teams = useAppStore((state) => state.teams);
   const players = useAppStore((state) => state.players);
@@ -54,9 +54,9 @@ const Teams = () => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-100 py-5 rounded-md w-full">
+    <div className="flex flex-col h-full py-5 rounded-md w-full">
       <Heading level="h3">Teams</Heading>
-      <div className="flex space-x-5 mx-5 py-5 h-full overflow-x-auto custom-scroll-x max-w-full overflow-y-hidden">
+      <div className="flex space-x-5 p-5 h-full overflow-x-auto custom-scroll-x max-w-full overflow-y-hidden">
         {teams.map((team) => (
           <Team key={team.id} team={team} />
         ))}
@@ -65,7 +65,6 @@ const Teams = () => {
         <Input
           className="w-full"
           value={name}
-          light
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleAddTeam()}
           placeholder="Team name"
@@ -101,4 +100,4 @@ const Teams = () => {
   );
 };
 
-export default Teams;
+export default TeamList;

@@ -26,8 +26,8 @@ const Team = ({ team }: TeamProps) => {
   return (
     <Droppable
       id={team.id}
-      className="w-full max-w-[50%] min-w-80 h-full bg-slate-200 rounded transition-colors"
-      isOverClassName="bg-slate-300"
+      className="w-full max-w-[50%] min-w-80 h-full rounded-md transition-colors shadow-lg"
+      isOverClassName="bg-white/10"
     >
       <div
         key={team.id}
@@ -42,8 +42,7 @@ const Team = ({ team }: TeamProps) => {
           ))}
         </div>
         <Button
-          noBackground
-          className="mt-auto hover:text-slate-900 text-slate-800 w-full bg-slate-100 py-2 hover:bg-slate-50"
+          className="mt-auto w-full py-3"
           onClick={() => handleDeleteTeam(team.id)}
           aria-label="delete team"
           title="Delete team"

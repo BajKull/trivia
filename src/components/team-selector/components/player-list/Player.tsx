@@ -14,14 +14,14 @@ const Player = ({ player, notDraggable }: PlayerProps) => {
   const deletePlayer = useAppStore((state) => state.deletePlayer);
 
   const renderPlayer = () => (
-    <div className="w-full px-5 py-2 bg-slate-50 hover:bg-white transition-colors rounded-lg flex items-center">
+    <div className="w-full px-5 py-2 shadow transition-colors rounded-lg flex items-center relative h-10">
       <p className="font-medium text-sm text-slate-800 max-w-44 truncate">
         {player.name}
       </p>
       {!player.team && (
         <Button
           noBackground
-          className="ml-auto text-slate-800"
+          className="ml-auto text-slate-800 absolute right-5"
           onClick={() => deletePlayer(player.id)}
           aria-label="delete player"
           title="Delete player"

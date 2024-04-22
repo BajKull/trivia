@@ -18,7 +18,7 @@ const INDEX_TO_GRADIENT = {
 const Category = ({ data, ...props }: CategoryProps) => {
   const cls = classNames(
     props.className,
-    "flex flex-col justify-center px-5 w-full p-5 shadow-xl rounded-lg"
+    "flex flex-col justify-center px-5 w-full p-5 shadow-xl rounded-lg bg-white/50"
   );
 
   const { name, questions, gradient } = data;

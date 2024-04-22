@@ -21,7 +21,7 @@ const PlayerList = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-full bg-slate-100 py-5 rounded-md">
+    <div className="flex flex-col w-full h-full py-5 rounded-md">
       <Heading level="h3">Players</Heading>
       <div className="pt-5 space-y-2 overflow-y-auto overflow-x-hidden custom-scroll px-5 max-w-full h-full">
         {players.map((player) => (
@@ -32,7 +32,6 @@ const PlayerList = () => {
         <Input
           className="w-full"
           value={name}
-          light
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleAddPlayer()}
           placeholder="Name"
