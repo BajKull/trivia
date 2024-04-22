@@ -6,7 +6,7 @@ export interface GameStateSlice {
   setGameState: (gameState?: GameState) => void;
 }
 
-export const createDndSlice: StateCreator<
+export const createGameStateSlice: StateCreator<
   GameStateSlice,
   [],
   [],
