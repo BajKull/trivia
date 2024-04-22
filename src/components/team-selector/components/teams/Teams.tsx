@@ -1,4 +1,4 @@
-import { faPlus, faShuffle } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPlus, faShuffle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Heading from "components/board/components/heading/Heading";
 import Button from "components/button/Button";
@@ -13,6 +13,7 @@ const Teams = () => {
   const players = useAppStore((state) => state.players);
   const assignPlayerToTeam = useAppStore((state) => state.assignPlayerToTeam);
   const addTeam = useAppStore((state) => state.addTeam);
+  const setGameState = useAppStore((state) => state.setGameState);
 
   const handleAddTeam = () => {
     if (!name) return;
@@ -34,6 +35,24 @@ const Teams = () => {
     );
   };
 
+  const startGame = () => {
+    if (!teams.length) {
+      return console.log("there are no teams");
+    }
+
+    const occupiedTeams = [...new Set(players.map((player) => player.team))];
+
+    if (occupiedTeams.some((team) => !team)) {
+      return console.log("there are unassigned players");
+    }
+
+    if (teams.some((team) => !occupiedTeams.includes(team.id))) {
+      return console.log("there are empty teams");
+    }
+
+    setGameState("game");
+  };
+
   return (
     <div className="flex flex-col h-full bg-slate-100 py-5 rounded-md w-full">
       <Heading level="h3">Teams</Heading>
@@ -51,15 +70,31 @@ const Teams = () => {
           onKeyDown={(e) => e.key === "Enter" && handleAddTeam()}
           placeholder="Team name"
         />
-        <Button onClick={handleAddTeam} disabled={!name}>
-          <p className="text-nowrap mr-3">Add team</p>
+        <Button
+          onClick={handleAddTeam}
+          disabled={!name}
+          title="Add team"
+          aria-label="add team"
+          className="min-w-10"
+        >
           <FontAwesomeIcon icon={faPlus} />
         </Button>
         <Button
           onClick={shufflePlayers}
           disabled={!teams.length || !players.length}
+          title="Shuffle teams"
+          aria-label="shuffle teams"
+          className="min-w-10"
         >
           <FontAwesomeIcon icon={faShuffle} />
+        </Button>
+        <Button
+          title="Start game"
+          aria-label="start game"
+          className="min-w-10"
+          onClick={startGame}
+        >
+          <FontAwesomeIcon icon={faPlay} />
         </Button>
       </div>
     </div>

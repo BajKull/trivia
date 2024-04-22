@@ -10,7 +10,7 @@ const TeamSelector = () => {
   return (
     <TeamSelectorDndProvider>
       <div className="fixed w-full h-full flex justify-center items-center backdrop-blur-sm">
-        <div className="max-w-screen-2xl max-h-[90%] px-5 py-10 w-11/12 h-full flex space-x-5 bg-white shadow-xl rounded-xl">
+        <div className="max-w-screen-2xl max-h-[90%] p-5 w-11/12 h-full flex space-x-5 bg-white shadow-xl rounded-xl">
           <div className="w-3/4">
             <Teams />
           </div>
