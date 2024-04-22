@@ -18,11 +18,8 @@ const TeamSelectorDndProvider = ({ children }: DndProviderProps) => {
   const handleDragEnd = (event: DragEndEvent) => {
     setDragged(undefined);
 
-    const {
-      active: { id: playerId },
-      collisions,
-    } = event;
-    const teamId = collisions?.[0].id;
+    const { active: { id: playerId } = {}, collisions } = event;
+    const teamId = collisions?.[0]?.id;
 
     if (!playerId || !teamId) return;
 
