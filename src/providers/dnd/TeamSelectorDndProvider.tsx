@@ -1,4 +1,11 @@
-import { DndContext, DragEndEvent, DragStartEvent } from "@dnd-kit/core";
+import {
+  DndContext,
+  DragEndEvent,
+  DragStartEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { useAppStore } from "store/store";
 
 interface DndProviderProps {
@@ -26,8 +33,20 @@ const TeamSelectorDndProvider = ({ children }: DndProviderProps) => {
     assignPlayerToTeam(playerId as string, teamId as string);
   };
 
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    })
+  );
+
   return (
-    <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+    <DndContext
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+      sensors={sensors}
+    >
       {children}
     </DndContext>
   );
