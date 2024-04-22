@@ -13,12 +13,14 @@ const INDEX_TO_GRADIENT = {
   2: 700,
   3: 800,
   4: 900,
-};
+} as const;
+
+type ColorIndex = keyof typeof INDEX_TO_GRADIENT;
 
 const Category = ({ data, ...props }: CategoryProps) => {
   const cls = classNames(
     props.className,
-    "flex flex-col justify-center px-5 w-full p-5 shadow-xl rounded-lg bg-white/50"
+    "flex flex-col justify-center px-5 w-full p-5 shadow-xl rounded-lg shadow-lg"
   );
 
   const { name, questions, gradient } = data;
@@ -33,7 +35,7 @@ const Category = ({ data, ...props }: CategoryProps) => {
             data={question}
             key={question.question}
             fallbackPoints={100 * (index + 1)}
-            color={colors[INDEX_TO_GRADIENT[index]]}
+            color={colors[INDEX_TO_GRADIENT[index as ColorIndex]]}
           />
         ))}
       </div>

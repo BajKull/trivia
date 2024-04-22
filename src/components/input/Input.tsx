@@ -21,7 +21,7 @@ const Input = ({
       "bg-indigo-700 hover:bg-indigo-800 placeholder-slate-100 text-white":
         !noBackground && !outline && !light,
       "border-4": outline,
-      "bg-white text-slate-800": light,
+      "bg-white": light,
     }
   );
   return <input className={cls} {...props} />;
