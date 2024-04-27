@@ -8,7 +8,7 @@ interface AnswersProps {
 
 const Answers = ({ answers, onClick }: AnswersProps) => {
   return (
-    <div className="grid grid-cols-2 gap-5 mt-auto">
+    <div className="grid grid-cols-2 gap-5 mt-auto w-full">
       {answers?.map((answer) => (
         <Button
           key={answer}

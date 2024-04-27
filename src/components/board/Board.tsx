@@ -8,7 +8,7 @@ interface BoardProps extends React.HTMLAttributes<HTMLDivElement> {
 const Board = ({ data, ...props }: BoardProps) => {
   return (
     <div {...props} className="flex mx-auto w-11/12">
-      <div className="max-w-screen-2xl max-h-[90%] p-5 w-11/12 h-full flex space-x-5 rounded-xl bg-white/40 shadow-xl backdrop-blur-xl mx-auto">
+      <div className="max-w-screen-2xl max-h-[90%] w-11/12 h-full flex space-x-5 rounded-xl backdrop-blur-xl mx-auto bg-glass">
         {data.map((category) => (
           <Category key={category.id} data={category} />
         ))}
