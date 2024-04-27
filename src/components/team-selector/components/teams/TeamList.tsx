@@ -11,6 +11,7 @@ const TeamList = () => {
   const [name, setName] = useState("");
   const teams = useAppStore((state) => state.teams);
   const players = useAppStore((state) => state.players);
+  const setTurn = useAppStore((state) => state.setTurn);
   const assignPlayerToTeam = useAppStore((state) => state.assignPlayerToTeam);
   const addTeam = useAppStore((state) => state.addTeam);
   const setGameState = useAppStore((state) => state.setGameState);
@@ -50,7 +51,11 @@ const TeamList = () => {
       return console.log("there are empty teams");
     }
 
+    const startingTeamIndex = Math.floor(Math.random() * teams.length);
+    const startingTeam = teams[startingTeamIndex];
+
     setGameState("game");
+    setTurn(startingTeam.id);
   };
 
   return (
