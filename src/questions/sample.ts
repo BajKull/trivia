@@ -1,41 +1,68 @@
 import { Category } from "../components/board/types";
+import inTheAirTonightMp3 from "/sounds/phil collins - in the air tonight.mp3";
+import wojownicyWodyMp3 from "/sounds/bracia figo fagot - wojownicy wody.mp3";
+import californicationMp3 from "/sounds/red hot chilli peppers - californication.mp3";
+import standByMeMp3 from "/sounds/ben e king - stand by me.mp3";
+import legendMp3 from "/sounds/tevvez - legend.mp3";
 
 export const sampleCategory: Category = {
-  id: "sampleCategory",
-  name: "Sample category",
-  gradient: "blue",
+  id: "poNutce",
+  name: "Po nutce",
+  gradient: "green",
   questions: [
     {
-      question: "Test",
-      answers: ["1", "2", "3", "4"],
-      correctAnswer: "2",
+      question: "Podaj tytuł piosenki",
+      correctAnswer: "Red Hot Chilli Peppers - Californication",
+      audio: {
+        title: "Californication",
+        author: "Red Hot Chilli Peppers",
+        src: californicationMp3,
+      },
     },
     {
-      question: "Test2",
-      answers: ["1", "2", "3", "4"],
-      correctAnswer: "2",
+      question: "Podaj tytuł piosenki",
+      correctAnswer: "Tevvez - Legend",
+      audio: {
+        title: "Legend",
+        author: "Tevvez",
+        src: legendMp3,
+      },
     },
     {
-      question: "Test3",
-      answers: ["1", "2", "3", "4"],
-      correctAnswer: "2",
+      question: "Podaj tytuł piosenki",
+      correctAnswer: "Bracia Figo Fagot - Wojownicy Wódy",
+      audio: {
+        title: "Wojownicy Wódy",
+        author: "Bracia Figo Fagot",
+        src: wojownicyWodyMp3,
+      },
     },
+
     {
-      question: "Test4",
-      answers: ["1", "2", "3", "4"],
-      correctAnswer: "2",
+      question: "Podaj tytuł piosenki",
+      correctAnswer: "Ben E. King - Stand By Me",
+      audio: {
+        title: "Stand By Me",
+        author: "Ben E. King",
+        src: standByMeMp3,
+      },
     },
+
     {
-      question: "Test5",
-      answers: ["1", "2", "3", "4"],
-      correctAnswer: "2",
+      question: "Podaj tytuł piosenki",
+      correctAnswer: "Phil Collins - In The Air Tonight",
+      audio: {
+        title: "In The Air Tonight",
+        author: "Phil Collins",
+        src: inTheAirTonightMp3,
+      },
     },
   ],
 };
 
 export const sampleCategory2: Category = {
-  id: "sampleCategory2",
-  name: "Sample category2",
+  id: "akustycznie",
+  name: "Akustycznie",
   gradient: "indigo",
   questions: [
     {
@@ -67,9 +94,9 @@ export const sampleCategory2: Category = {
 };
 
 export const sampleCategory3: Category = {
-  id: "sampleCategory3",
-  name: "Sample category3",
-  gradient: "lime",
+  id: "coDalej",
+  name: "Co dalej",
+  gradient: "orange",
   questions: [
     {
       question: "Test",
@@ -100,9 +127,9 @@ export const sampleCategory3: Category = {
 };
 
 export const sampleCategory4: Category = {
-  id: "sampleCategory4",
-  name: "Sample category4",
-  gradient: "pink",
+  id: "teledysk",
+  name: "Teledysk",
+  gradient: "purple",
   questions: [
     {
       question: "Test",
@@ -133,9 +160,9 @@ export const sampleCategory4: Category = {
 };
 
 export const sampleCategory5: Category = {
-  id: "sampleCategory5",
-  name: "Sample category5",
-  gradient: "purple",
+  id: "ledengdy",
+  name: "Legendy",
+  gradient: "red",
   questions: [
     {
       question: "Test",
