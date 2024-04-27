@@ -22,7 +22,9 @@ const PlayerList = () => {
 
   return (
     <div className="flex flex-col w-full h-full py-5 rounded-md">
-      <Heading level="h3">Players</Heading>
+      <Heading center level="h3">
+        Players
+      </Heading>
       <div className="pt-5 space-y-2 overflow-y-auto overflow-x-hidden custom-scroll px-5 max-w-full h-full">
         {players.map((player) => (
           <Player key={player.id} player={player} />

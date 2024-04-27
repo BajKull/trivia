@@ -33,7 +33,7 @@ const Team = ({ team }: TeamProps) => {
         key={team.id}
         className="px-5 pt-10 pb-5 w-full h-full flex flex-col"
       >
-        <Heading level="h4" className="line-clamp-2 h-14">
+        <Heading center level="h4" className="line-clamp-2 h-14">
           {team.name}
         </Heading>
         <div className="space-y-2 mt-5">

@@ -2,6 +2,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "components/button/Button";
 import { Draggable } from "components/dnd/Draggable";
+import Text from "components/text/Text";
 import { useAppStore } from "store/store";
 import { Player as PlayerType } from "types/types";
 
@@ -15,7 +16,9 @@ const Player = ({ player, notDraggable }: PlayerProps) => {
 
   const renderPlayer = () => (
     <div className="w-full px-5 py-2 shadow transition-colors rounded-lg flex items-center relative h-10 hover:bg-white/10">
-      <p className="font-medium text-sm max-w-44 truncate">{player.name}</p>
+      <Text className="font-medium text-sm max-w-44 truncate">
+        {player.name}
+      </Text>
       {!player.team && (
         <Button
           noBackground
