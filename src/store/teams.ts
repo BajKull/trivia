@@ -3,6 +3,7 @@ import { createTeam } from "utils/utils";
 import { StateCreator } from "zustand";
 
 const DEFAULT_TEAMS: Team[] = [];
+type HandleAnswer = { points: number; correct: boolean };
 
 export interface TeamsSlice {
   teams: Team[];
@@ -12,10 +13,12 @@ export interface TeamsSlice {
   addTeam: (name: string) => void;
   deleteTeam: (id: string) => void;
   resetTeams: () => void;
+  handleAnswer: ({ points, correct }: HandleAnswer) => void;
 }
 
 export const createTeamSlice: StateCreator<TeamsSlice, [], [], TeamsSlice> = (
-  set
+  set,
+  get
 ) => ({
   teams: DEFAULT_TEAMS,
   turn: undefined,
@@ -34,4 +37,24 @@ export const createTeamSlice: StateCreator<TeamsSlice, [], [], TeamsSlice> = (
       teams: teams.filter(({ id: teamId }) => teamId !== id),
     })),
   resetTeams: () => set(() => ({ teams: DEFAULT_TEAMS })),
+  handleAnswer: ({ correct, points }) => {
+    set(({ turn, teams }) => {
+      return {
+        teams: teams.map((team) => {
+          if (team.id !== turn) return team;
+          return {
+            ...team,
+            answers: team.answers + 1,
+            ...(correct
+              ? {
+                  correctAnswers: team.correctAnswers + 1,
+                  score: team.score + points,
+                }
+              : {}),
+          };
+        }),
+      };
+    });
+    get().setNextTurn();
+  },
 });

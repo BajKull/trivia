@@ -9,6 +9,7 @@ interface AudioProps extends React.AudioHTMLAttributes<HTMLAudioElement> {
   audio: AudioType;
   color?: string;
   hideMetadata?: boolean;
+  setRevealAnswer?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Audio = ({
@@ -16,6 +17,7 @@ const Audio = ({
   className,
   color,
   hideMetadata,
+  setRevealAnswer,
   ...props
 }: AudioProps) => {
   const [isTextHidden, setIsTextHidden] = useState(hideMetadata ?? false);
@@ -33,6 +35,11 @@ const Audio = ({
       (audio.currentTime * 100) / audio.duration
     );
     setProgress(audioProgress);
+  };
+
+  const revealAnswer = () => {
+    setRevealAnswer && setRevealAnswer(true);
+    setIsTextHidden(false);
   };
 
   return (
@@ -59,7 +66,7 @@ const Audio = ({
       <Controls
         audioRef={audioRef}
         show={isTextHidden}
-        setShow={setIsTextHidden}
+        setShow={revealAnswer}
         isAudioPlaying={isAudioPlaying}
         setIsAudioPlaying={setIsAudioPlaying}
       />

@@ -12,7 +12,7 @@ interface ControlsProps {
   isAudioPlaying: boolean;
   setIsAudioPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setShow: () => void;
 }
 
 const Controls = ({
@@ -40,15 +40,15 @@ const Controls = ({
       <Button
         round
         noBackground
-        className="w-12 h-12 shadow-lg bg-white/10"
-        onClick={() => setShow((prevShow) => !prevShow)}
+        className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
+        onClick={setShow}
       >
-        <FontAwesomeIcon icon={show ? faEye : faEyeSlash} color="white" />
+        <FontAwesomeIcon icon={show ? faEyeSlash : faEye} color="white" />
       </Button>
       <Button
         round
         noBackground
-        className="w-12 h-12 shadow-lg bg-white/10"
+        className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
         onClick={playSound}
       >
         <FontAwesomeIcon
