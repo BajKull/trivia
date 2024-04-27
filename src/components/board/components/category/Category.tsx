@@ -35,7 +35,7 @@ const Category = ({ data, ...props }: CategoryProps) => {
           <Question
             category={name}
             data={question}
-            key={question.question}
+            key={`${question.question}-${question.correctAnswer}`}
             fallbackPoints={100 * (index + 1)}
             color={colors[INDEX_TO_GRADIENT[index as ColorIndex]]}
           />
