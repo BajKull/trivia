@@ -1,13 +1,11 @@
 import TeamSelector from "components/team-selector/TeamSelector";
 import Board from "./components/board/Board";
-import {
-  sampleCategory,
-  sampleCategory2,
-  sampleCategory3,
-  sampleCategory4,
-  sampleCategory5,
-} from "./questions/sample";
 import { useAppStore } from "store/store";
+import { akustycznieCategory } from "questions/acoustic";
+import { coDalejCategory } from "questions/whatNext";
+import { oneHitWondersCategory } from "questions/oneHitWonders";
+import { poNutceCategory } from "questions/singleNote";
+import { teledyskCategory } from "questions/musicVideo";
 
 function App() {
   const gameState = useAppStore((state) => state.gameState);
@@ -21,11 +19,11 @@ function App() {
       {gameState === "game" && (
         <Board
           data={[
-            sampleCategory,
-            sampleCategory2,
-            sampleCategory3,
-            sampleCategory4,
-            sampleCategory5,
+            akustycznieCategory,
+            coDalejCategory,
+            oneHitWondersCategory,
+            poNutceCategory,
+            teledyskCategory,
           ]}
         />
       )}

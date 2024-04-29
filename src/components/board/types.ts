@@ -13,6 +13,8 @@ export type Question = {
   correctAnswer: string;
   points?: number;
   audio?: Audio;
+  image?: string;
+  hintPreview?: boolean;
 };
 
 export type Category = {

@@ -18,17 +18,17 @@ const SelectOutcome = ({ positive, negative, text }: SelectOutcomeProps) => {
           round
           noBackground
           className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
-          onClick={positive}
+          onClick={negative}
         >
-          <FontAwesomeIcon icon={faCheck} color="white" />
+          <FontAwesomeIcon icon={faXmark} color="white" />
         </Button>
         <Button
           round
           noBackground
           className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
-          onClick={negative}
+          onClick={positive}
         >
-          <FontAwesomeIcon icon={faXmark} color="white" />
+          <FontAwesomeIcon icon={faCheck} color="white" />
         </Button>
       </div>
     </div>
