@@ -43,7 +43,7 @@ const Audio = ({
   };
 
   return (
-    <div className="bg-glass mt-auto relative overflow-hidden w-[500px] flex justify-between">
+    <div className="bg-glass mt-auto relative overflow-hidden w-[600px] flex justify-between">
       <div className="flex space-x-3 items-center">
         <div
           className={classNames(
@@ -52,7 +52,10 @@ const Audio = ({
           )}
         />
         <div className="flex flex-col justify-center h-full w-60 space-y-2">
-          <Text className="font-semibold h-4 text-white" hidden={hideMetadata}>
+          <Text
+            className="font-semibold h-4 text-white whitespace-nowrap"
+            hidden={hideMetadata}
+          >
             {title}
           </Text>
           <Text

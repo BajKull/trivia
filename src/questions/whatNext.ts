@@ -44,21 +44,21 @@ export const coDalejCategory: Category = {
     {
       question: "Dokończ słowa piosenki",
       audio: {
-        author: "Survivor",
-        src: eyeOfTheTigerMp3,
-        title: "Eye Of The Tiger",
-      },
-      correctAnswer: "risin' up, back on the street",
-      hintPreview: true,
-    },
-    {
-      question: "Dokończ słowa piosenki",
-      audio: {
         author: "Zbigniew Wodecki",
         src: lubiewracacTamGdzieBylemMp3,
         title: "Lubię wracać tam gdzie byłem",
       },
       correctAnswer: "ta dziewczyna z warkoczami",
+      hintPreview: true,
+    },
+    {
+      question: "Dokończ słowa piosenki",
+      audio: {
+        author: "Survivor",
+        src: eyeOfTheTigerMp3,
+        title: "Eye Of The Tiger",
+      },
+      correctAnswer: "risin' up, back on the street",
       hintPreview: true,
     },
   ],
