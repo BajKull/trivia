@@ -26,7 +26,11 @@ const TeamStats = () => {
           >
             <div className="flex flex-col space-y-2 mb-5 max-h-48 py-1 overflow-y-auto overflow-x-hidden custom-scroll">
               {teamPlayers.map((player) => (
-                <Player player={player} notDraggable />
+                <Player
+                  player={player}
+                  notDraggable
+                  key={`team-stats-player-${player.id}`}
+                />
               ))}
             </div>
             <div className="flex justify-between">

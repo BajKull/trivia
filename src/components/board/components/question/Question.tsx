@@ -8,6 +8,7 @@ import Audio from "./components/audio/Audio";
 import SelectOutcome from "./components/select-outcome/SelectOutcome";
 import QuestionContent from "./components/question-content/QuestionContent";
 import { useAppStore } from "store/store";
+import RevealAnswer from "./components/reveal-answer/RevealAnswer";
 
 interface QuestionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   category: string;
@@ -81,13 +82,9 @@ const Question = ({
           )}
           {answers && <Answers answers={answers} onClick={answerQuestion} />}
           {audio && (
-            <Audio
-              audio={audio}
-              color={color}
-              hideMetadata
-              setRevealAnswer={setRevealAnswer}
-            />
+            <Audio audio={audio} color={color} hideMetadata={!revealAnswer} />
           )}
+          <RevealAnswer show={revealAnswer} setShow={setRevealAnswer} />
         </div>
       </RippleModal>
       <Button

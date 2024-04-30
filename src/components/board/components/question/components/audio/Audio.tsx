@@ -9,7 +9,6 @@ interface AudioProps extends React.AudioHTMLAttributes<HTMLAudioElement> {
   audio: AudioType;
   color?: string;
   hideMetadata?: boolean;
-  setRevealAnswer?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Audio = ({
@@ -17,10 +16,8 @@ const Audio = ({
   className,
   color,
   hideMetadata,
-  setRevealAnswer,
   ...props
 }: AudioProps) => {
-  const [isTextHidden, setIsTextHidden] = useState(hideMetadata ?? false);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const cls = classNames(className);
@@ -37,11 +34,6 @@ const Audio = ({
     setProgress(audioProgress);
   };
 
-  const revealAnswer = () => {
-    setRevealAnswer && setRevealAnswer(true);
-    setIsTextHidden(false);
-  };
-
   return (
     <div className="bg-glass mt-auto relative overflow-hidden w-[500px] flex justify-between">
       <div className="flex space-x-3 items-center">
@@ -52,12 +44,12 @@ const Audio = ({
           )}
         />
         <div className="flex flex-col justify-center h-full w-60 space-y-2">
-          <Text className="font-semibold h-4 text-white" hidden={isTextHidden}>
+          <Text className="font-semibold h-4 text-white" hidden={hideMetadata}>
             {title}
           </Text>
           <Text
             className="text-slate-200 text-xs w-40 h-3"
-            hidden={isTextHidden}
+            hidden={hideMetadata}
           >
             {author}
           </Text>
@@ -65,8 +57,6 @@ const Audio = ({
       </div>
       <Controls
         audioRef={audioRef}
-        show={isTextHidden}
-        setShow={revealAnswer}
         isAudioPlaying={isAudioPlaying}
         setIsAudioPlaying={setIsAudioPlaying}
       />

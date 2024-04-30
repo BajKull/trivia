@@ -1,9 +1,4 @@
-import {
-  faEye,
-  faEyeSlash,
-  faPause,
-  faPlay,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "components/button/Button";
 
@@ -11,16 +6,12 @@ interface ControlsProps {
   audioRef: React.RefObject<HTMLAudioElement>;
   isAudioPlaying: boolean;
   setIsAudioPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-  show: boolean;
-  setShow: () => void;
 }
 
 const Controls = ({
   audioRef,
   isAudioPlaying,
   setIsAudioPlaying,
-  show,
-  setShow,
 }: ControlsProps) => {
   const playSound = () => {
     const audio = audioRef.current;
@@ -37,14 +28,6 @@ const Controls = ({
 
   return (
     <div className="flex space-x-3">
-      <Button
-        round
-        noBackground
-        className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
-        onClick={setShow}
-      >
-        <FontAwesomeIcon icon={show ? faEyeSlash : faEye} color="white" />
-      </Button>
       <Button
         round
         noBackground
