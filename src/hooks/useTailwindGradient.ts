@@ -27,11 +27,11 @@ const useTailwindGradient = ({ variant }: useTailwindGradientProps) => {
         };
       case "red":
         return {
-          900: "from-yellow-700 via-amber-600 to-red-600 shadow-red-600/50",
-          800: "from-yellow-700 via-amber-500 to-red-500 shadow-red-500/50",
-          700: "from-yellow-600 via-amber-500 to-red-500 shadow-red-500/50",
-          600: "from-yellow-600 via-amber-400 to-red-400 shadow-red-400/50",
-          500: "from-yellow-500 via-amber-400 to-red-400 shadow-red-400/50",
+          900: "from-teal-700 via-purple-600 to-red-600 shadow-red-600/50",
+          800: "from-teal-600 via-purple-500 to-red-500 shadow-red-500/50",
+          700: "from-teal-600 via-purple-500 to-red-500 shadow-red-500/50",
+          600: "from-teal-500 via-purple-400 to-red-400 shadow-red-400/50",
+          500: "from-teal-500 via-purple-400 to-red-400 shadow-red-400/50",
         };
       case "orange":
         return {

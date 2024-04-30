@@ -10,6 +10,7 @@ import QuestionContent from "./components/question-content/QuestionContent";
 import { useAppStore } from "store/store";
 import RevealAnswer from "./components/reveal-answer/RevealAnswer";
 import HintPreview from "./components/hint-preview/HintPreview";
+import Image from "./components/image/Image";
 
 interface QuestionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   category: string;
@@ -85,7 +86,7 @@ const Question = ({
             <HintPreview show={true} hint={correctAnswer} />
           )}
           {revealAnswer && (
-            <div className="mt-20">
+            <div className="mt-10">
               <SelectOutcome
                 text={correctAnswer}
                 positive={handleCorrectAnswer}
@@ -93,6 +94,7 @@ const Question = ({
               />
             </div>
           )}
+          {image && <Image src={image} />}
           {answers && <Answers answers={answers} onClick={answerQuestion} />}
           {audio && (
             <Audio

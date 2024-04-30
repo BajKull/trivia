@@ -13,13 +13,8 @@ export const teledyskCategory: Category = {
   questions: [
     {
       question: "Skąd pochodzi to zdjęcie",
-      image: levitatingJpg,
-      correctAnswer: "Dua Lipa - Levitating",
-    },
-    {
-      question: "Skąd pochodzi to zdjęcie",
-      image: movesLikeJaggerJpg,
-      correctAnswer: "Maroon 5 - Moves Like Jagger",
+      image: thriftShopJpg,
+      correctAnswer: "Macklemore - Thrift Shop",
     },
     {
       question: "Skąd pochodzi to zdjęcie",
@@ -28,8 +23,13 @@ export const teledyskCategory: Category = {
     },
     {
       question: "Skąd pochodzi to zdjęcie",
-      image: thriftShopJpg,
-      correctAnswer: "Macklemore - Thrift Shop",
+      image: levitatingJpg,
+      correctAnswer: "Dua Lipa - Levitating",
+    },
+    {
+      question: "Skąd pochodzi to zdjęcie",
+      image: movesLikeJaggerJpg,
+      correctAnswer: "Maroon 5 - Moves Like Jagger",
     },
     {
       question: "Skąd pochodzi to zdjęcie",
