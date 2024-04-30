@@ -9,6 +9,7 @@ import SelectOutcome from "./components/select-outcome/SelectOutcome";
 import QuestionContent from "./components/question-content/QuestionContent";
 import { useAppStore } from "store/store";
 import RevealAnswer from "./components/reveal-answer/RevealAnswer";
+import HintPreview from "./components/hint-preview/HintPreview";
 
 interface QuestionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   category: string;
@@ -27,7 +28,16 @@ const Question = ({
   const [isQuestionOpen, setIsQuestionOpen] = useState(false);
   const [revealAnswer, setRevealAnswer] = useState(false);
   const [answered, setAnswered] = useState(false);
-  const { points, answers, audio, correctAnswer, question } = data;
+  const [isAudioEnded, setIsAudioEnded] = useState(false);
+  const {
+    points,
+    answers,
+    audio,
+    correctAnswer,
+    question,
+    hintPreview,
+    image,
+  } = data;
 
   const handleAnswer = useAppStore((state) => state.handleAnswer);
 
@@ -71,6 +81,9 @@ const Question = ({
             question={question}
             points={questionPoints}
           />
+          {hintPreview && !revealAnswer && isAudioEnded && (
+            <HintPreview show={true} hint={correctAnswer} />
+          )}
           {revealAnswer && (
             <div className="mt-20">
               <SelectOutcome
@@ -82,7 +95,12 @@ const Question = ({
           )}
           {answers && <Answers answers={answers} onClick={answerQuestion} />}
           {audio && (
-            <Audio audio={audio} color={color} hideMetadata={!revealAnswer} />
+            <Audio
+              audio={audio}
+              color={color}
+              hideMetadata={!revealAnswer}
+              onEnded={() => setIsAudioEnded(true)}
+            />
           )}
           <RevealAnswer show={revealAnswer} setShow={setRevealAnswer} />
         </div>

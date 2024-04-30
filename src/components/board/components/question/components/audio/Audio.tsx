@@ -16,6 +16,7 @@ const Audio = ({
   className,
   color,
   hideMetadata,
+  onEnded,
   ...props
 }: AudioProps) => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -32,6 +33,13 @@ const Audio = ({
       (audio.currentTime * 100) / audio.duration
     );
     setProgress(audioProgress);
+  };
+
+  const handleOnEnded = (
+    event: React.SyntheticEvent<HTMLAudioElement, Event>
+  ) => {
+    onEnded && onEnded(event);
+    setIsAudioPlaying(false);
   };
 
   return (
@@ -67,7 +75,7 @@ const Audio = ({
         className={cls}
         ref={audioRef}
         src={src}
-        onEnded={() => setIsAudioPlaying(false)}
+        onEnded={handleOnEnded}
         onTimeUpdate={handleTimeUpdate}
         {...props}
       />

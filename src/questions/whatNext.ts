@@ -29,6 +29,7 @@ export const coDalejCategory: Category = {
         title: "King Bruce Lee Karate Mistrz",
       },
       correctAnswer: "mogę robić wszystko",
+      hintPreview: true,
     },
     {
       question: "Dokończ słowa piosenki",
@@ -38,6 +39,7 @@ export const coDalejCategory: Category = {
         title: "Harnaś Ice Tea",
       },
       correctAnswer: "Harnaś to prima",
+      hintPreview: true,
     },
     {
       question: "Dokończ słowa piosenki",
@@ -47,6 +49,7 @@ export const coDalejCategory: Category = {
         title: "Eye Of The Tiger",
       },
       correctAnswer: "risin' up, back on the street",
+      hintPreview: true,
     },
     {
       question: "Dokończ słowa piosenki",
@@ -56,6 +59,7 @@ export const coDalejCategory: Category = {
         title: "Lubię wracać tam gdzie byłem",
       },
       correctAnswer: "ta dziewczyna z warkoczami",
+      hintPreview: true,
     },
   ],
 };
