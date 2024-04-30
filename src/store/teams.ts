@@ -13,6 +13,7 @@ export interface TeamsSlice {
   addTeam: (name: string) => void;
   deleteTeam: (id: string) => void;
   resetTeams: () => void;
+  modifyPoints: (teamId: string, amount: number) => void;
   handleAnswer: ({ points, correct }: HandleAnswer) => void;
 }
 
@@ -37,6 +38,16 @@ export const createTeamSlice: StateCreator<TeamsSlice, [], [], TeamsSlice> = (
       teams: teams.filter(({ id: teamId }) => teamId !== id),
     })),
   resetTeams: () => set(() => ({ teams: DEFAULT_TEAMS })),
+  modifyPoints: (teamId, amount) =>
+    set(({ teams }) => ({
+      teams: teams.map((team) => {
+        if (team.id !== teamId) return team;
+        return {
+          ...team,
+          score: team.score + amount,
+        };
+      }),
+    })),
   handleAnswer: ({ correct, points }) => {
     set(({ turn, teams }) => {
       return {

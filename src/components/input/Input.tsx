@@ -18,7 +18,7 @@ const Input = ({
     className,
     "rounded-lg py-2 px-3 font-semibold transition-colors",
     {
-      "bg-indigo-700 hover:bg-indigo-800 placeholder-slate-100 text-white":
+      "bg-indigo-700 hover:bg-indigo-800 placeholder-slate-100 text-white placeholder-slate-300":
         !noBackground && !outline && !light,
       "border-4": outline,
       "bg-white": light,
