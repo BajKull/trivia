@@ -16,7 +16,7 @@ export const oneHitWondersCategory: Category = {
     },
     {
       question:
-        "Hiszpański hit lat 90 charakteryzujący się swoim ikonicznym flamenco/dance-pop. Choreografia składa się z kilku krótkich powtarzających się elementów wykonywanych podczas refrenu.",
+        "Hiszpański hit lat 90 charakteryzujący się swoim ikonicznym flamenco/dance-pop. Choreografia składa się z kilku krótkich powtarzających się ruchów wykonywanych podczas refrenu.",
       correctAnswer: "Macarena - Los del Rio",
     },
     {
