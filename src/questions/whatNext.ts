@@ -62,4 +62,8 @@ export const coDalejCategory: Category = {
       hintPreview: true,
     },
   ],
+  bonus: {
+    question:
+      "Głuchy telefon. Każda z drużyn dostanie krótki opis zawierający słowa klucze. Na początku należy wybrać kolejność przekazywania wiadomości. Jedna osoba opowiada drugiej zapamiętaną treść z jak najwiekszą ilością szczegołów w trakcie gdy reszta drużyny nie słyszy przekazywanego komunikatu. Ostatnia osoba stara się odtworzyć z jak największa dokładnością oryginalny tekst.",
+  },
 };

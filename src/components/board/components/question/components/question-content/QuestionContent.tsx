@@ -4,7 +4,7 @@ import Text from "components/text/Text";
 interface QuestionContentProps {
   category: string;
   question: string;
-  points: number;
+  points: number | string;
 }
 
 const QuestionContent = ({
@@ -19,7 +19,7 @@ const QuestionContent = ({
         <Text className="text-slate-300">{points}</Text>
       </div>
       <Heading
-        className="text-white text-4xl font-medium leading-relaxed"
+        className="text-white text-4xl font-medium leading-relaxed whitespace-pre-line"
         level="h1"
       >
         {question}

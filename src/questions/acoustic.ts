@@ -57,4 +57,8 @@ export const akustycznieCategory: Category = {
       correctAnswer: "Linkin Park - Faint.mp3",
     },
   ],
+  bonus: {
+    question:
+      "Każda z drużyn wybiera piosenkę, którą będzie wykonywać w formacie a cappelli. Członkowie drużyny powinni naśladować różne instrumenty/odgłosy lub tworzyć harmonie.",
+  },
 };

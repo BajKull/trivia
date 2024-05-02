@@ -59,4 +59,8 @@ export const poNutceCategory: Category = {
       },
     },
   ],
+  bonus: {
+    question:
+      "Każda z drużyn ma za zadanie stworzyć nietuzinkową historię. Osoby w drużynie po kolei podają jedno słowo w celu utworzenia spójnej całości i tak w kółko. Zdania muszą być poprawne gramatycznie, inaczej historia się skończy. Wybierzcie po jednej osobie, która przejdzie do innej drużyny i dołączy do ich koła, aby im przeszkadzać. Osoba przeszkadzająca, również musi trzymać się reguły gramatyki - inaczej będzie pominięta w danej turze.",
+  },
 };

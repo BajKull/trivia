@@ -3,6 +3,8 @@ import { Category as CategoryType } from "../../types";
 import Question from "../question/Question";
 import useTailwindGradient from "../../../../hooks/useTailwindGradient";
 import Text from "components/text/Text";
+import { useState } from "react";
+import Bonus from "../bonus/Bonus";
 
 interface CategoryProps extends React.HTMLAttributes<HTMLDivElement> {
   data: CategoryType;
@@ -19,13 +21,17 @@ const INDEX_TO_GRADIENT = {
 type ColorIndex = keyof typeof INDEX_TO_GRADIENT;
 
 const Category = ({ data, ...props }: CategoryProps) => {
+  const [bonusShown, setBonusShown] = useState(false);
+  const [answeredAmount, setAnsweredAmount] = useState(0);
   const cls = classNames(
     props.className,
     "flex flex-col justify-center px-5 w-full p-5 rounded-lg shadow-xl"
   );
 
-  const { name, questions, gradient } = data;
+  const { bonus, name, questions, gradient } = data;
   const colors = useTailwindGradient({ variant: gradient });
+
+  const showBonus = answeredAmount === questions.length;
 
   return (
     <div {...props} className={cls}>
@@ -38,9 +44,21 @@ const Category = ({ data, ...props }: CategoryProps) => {
             key={`${question.question}-${question.correctAnswer}`}
             fallbackPoints={100 * (index + 1)}
             color={colors[INDEX_TO_GRADIENT[index as ColorIndex]]}
+            incrementAnsweredAmount={() =>
+              setAnsweredAmount((prev) => prev + 1)
+            }
           />
         ))}
       </div>
+      {bonus && !bonusShown && (
+        <Bonus
+          category={name}
+          show={showBonus}
+          color={colors[700]}
+          data={bonus}
+          setShow={() => setBonusShown(true)}
+        />
+      )}
     </div>
   );
 };

@@ -17,6 +17,7 @@ interface QuestionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   data: QuestionType;
   fallbackPoints: number;
   color: string;
+  incrementAnsweredAmount: () => void;
 }
 
 const Question = ({
@@ -24,6 +25,7 @@ const Question = ({
   color,
   data,
   fallbackPoints,
+  incrementAnsweredAmount,
   ...props
 }: QuestionProps) => {
   const [isQuestionOpen, setIsQuestionOpen] = useState(false);
@@ -55,16 +57,20 @@ const Question = ({
     "mx-auto max-w-screen-2xl px-5 py-10 w-full h-full flex flex-col items-center"
   );
 
-  const handleCorrectAnswer = () => {
-    handleAnswer({ correct: true, points: questionPoints });
+  const handleAnswerCommon = () => {
     setIsQuestionOpen(false);
     setAnswered(true);
+    incrementAnsweredAmount();
+  };
+
+  const handleCorrectAnswer = () => {
+    handleAnswer({ correct: true, points: questionPoints });
+    handleAnswerCommon();
   };
 
   const handleIncorrectAnswer = () => {
     handleAnswer({ correct: false, points: questionPoints });
-    setIsQuestionOpen(false);
-    setAnswered(true);
+    handleAnswerCommon();
   };
 
   const openQuestion = () => setIsQuestionOpen(true);

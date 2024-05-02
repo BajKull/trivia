@@ -17,9 +17,12 @@ export type Question = {
   hintPreview?: boolean;
 };
 
+export type Bonus = Partial<Question> & Pick<Question, "question">;
+
 export type Category = {
   id: string;
   name: string;
   questions: Question[];
   gradient: GradientVariant;
+  bonus?: Bonus;
 };

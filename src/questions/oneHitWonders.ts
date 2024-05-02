@@ -28,4 +28,8 @@ export const oneHitWondersCategory: Category = {
       correctAnswer: "99 Luftballons - Nena",
     },
   ],
+  bonus: {
+    question:
+      "Stwórz własną piosenkę!\nTematyka: solenizant\nWymyśl co najmniej jedną zwrotkę i refren. Następnie przy pomocy własnej kreatywności, narzędzia Suno lub innego, nadaj jej nieco życia.",
+  },
 };

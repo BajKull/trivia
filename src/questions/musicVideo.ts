@@ -37,4 +37,7 @@ export const teledyskCategory: Category = {
       correctAnswer: "Mr Worldwide - Timber",
     },
   ],
+  bonus: {
+    question: "Stwórz okładkę do albumu. Format dowolny.",
+  },
 };
