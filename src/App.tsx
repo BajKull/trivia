@@ -7,6 +7,7 @@ import { oneHitWondersCategory } from "questions/oneHitWonders";
 import { poNutceCategory } from "questions/singleNote";
 import { teledyskCategory } from "questions/musicVideo";
 import Planets from "components/planets/Planets";
+import Settings from "components/settings/Settings";
 
 function App() {
   const gameState = useAppStore((state) => state.gameState);
@@ -16,15 +17,18 @@ function App() {
       <Planets />
       {gameState === "teamBuilder" && <TeamSelector />}
       {gameState === "game" && (
-        <Board
-          data={[
-            akustycznieCategory,
-            coDalejCategory,
-            oneHitWondersCategory,
-            poNutceCategory,
-            teledyskCategory,
-          ]}
-        />
+        <>
+          <Board
+            data={[
+              akustycznieCategory,
+              coDalejCategory,
+              oneHitWondersCategory,
+              poNutceCategory,
+              teledyskCategory,
+            ]}
+          />
+          <Settings />
+        </>
       )}
     </main>
   );
