@@ -10,12 +10,7 @@ interface RevealAnswer {
 const RevealAnswer = ({ show, setShow }: RevealAnswer) => {
   return (
     <div className="absolute bottom-10 right-10">
-      <Button
-        round
-        noBackground
-        className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
-        onClick={() => setShow(true)}
-      >
+      <Button round light onClick={() => setShow(true)}>
         <FontAwesomeIcon icon={show ? faEyeSlash : faEye} color="white" />
       </Button>
     </div>

@@ -28,12 +28,7 @@ const Controls = ({
 
   return (
     <div className="flex space-x-3">
-      <Button
-        round
-        noBackground
-        className="w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20"
-        onClick={playSound}
-      >
+      <Button round light onClick={playSound}>
         <FontAwesomeIcon
           icon={isAudioPlaying ? faPause : faPlay}
           color="white"

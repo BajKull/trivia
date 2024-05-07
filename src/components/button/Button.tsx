@@ -3,12 +3,14 @@ import classNames from "classnames";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   noBackground?: boolean;
   outline?: boolean;
+  light?: boolean;
   round?: boolean;
 }
 
 const Button = ({
   className,
   children,
+  light,
   round,
   noBackground,
   outline,
@@ -22,6 +24,7 @@ const Button = ({
       "border-4": outline,
       "rounded-full": round,
       "rounded-lg ": !round,
+      "w-12 h-12 shadow-lg bg-white/10 hover:bg-white/20": light,
     }
   );
 
