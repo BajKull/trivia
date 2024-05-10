@@ -54,7 +54,7 @@ export const akustycznieCategory: Category = {
         src: faintMp3,
         title: "Faint",
       },
-      correctAnswer: "Linkin Park - Faint.mp3",
+      correctAnswer: "Linkin Park - Faint",
     },
   ],
   bonus: {

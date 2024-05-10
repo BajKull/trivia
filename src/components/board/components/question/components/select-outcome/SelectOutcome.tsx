@@ -12,7 +12,7 @@ interface SelectOutcomeProps {
 const SelectOutcome = ({ positive, negative, text }: SelectOutcomeProps) => {
   return (
     <div className="flex bg-glass flex-col space-y-5">
-      <Text className="text-white text-xl">{text}</Text>
+      <Text className="text-white text-xl text-center">{text}</Text>
       <div className="flex justify-center space-x-5">
         <Button round light onClick={negative}>
           <FontAwesomeIcon icon={faXmark} color="white" />
